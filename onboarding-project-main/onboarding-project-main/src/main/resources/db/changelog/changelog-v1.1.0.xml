@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+				
+<!-- Sequences -->
+    <changeSet id="1658146645874-1" author="drdj0208 (generated)">
+        <createSequence incrementBy="1" sequenceName="onboardings_id_seq" startValue="500"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-2" author="drdj0208 (generated)">
+        <createSequence incrementBy="1" sequenceName="permissions_id_seq" startValue="500"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-3" author="drdj0208 (generated)">
+        <createSequence incrementBy="1" sequenceName="user_roles_id_seq" startValue="500"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-4" author="drdj0208 (generated)">
+        <createTable tableName="actions">
+            <column name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_actions"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-5" author="drdj0208 (generated)">
+        <createTable tableName="links">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_links"/>
+            </column>
+            <column name="link" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+<!-- Notification table -->
+    <changeSet id="1658146645874-6" author="drdj0208 (generated)">
+        <createTable tableName="notifications">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_notifications"/>
+            </column>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="date" type="DATETIME"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="user_task_user_email" type="VARCHAR(255)"/>
+            <column name="user_task_task_id" type="BIGINT"/>
+            <column name="opened" type="BOOLEAN"/>
+            <column name="is_mentor" type="BOOLEAN"/>
+            <column name="user_recever" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+<!-- Onboarding table -->
+    <changeSet id="1658146645874-7" author="drdj0208 (generated)">
+        <createTable tableName="onboardings">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_onboardings"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+<!-- Permission table -->
+    <changeSet id="1658146645874-8" author="drdj0208 (generated)">
+        <createTable tableName="permissions">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_permissions"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-9" author="drdj0208 (generated)">
+        <createTable tableName="permissions_actions">
+            <column name="permission_entity_id" type="serial">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actions_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+<!-- Task table -->
+    <changeSet id="1658146645874-10" author="drdj0208 (generated)">
+        <createTable tableName="tasks">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_tasks"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="parent_task_id" type="BIGINT"/>
+            <column name="onboarding_id" type="serial"/>
+		    <column name="redniBr" type="int"/>
+		    <column name="serial_no" type="INT"/> 
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-11" author="drdj0208 (generated)">
+        <createTable tableName="tasks_links">
+            <column name="task_entity_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="links_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>   
+    
+<!-- User table -->
+    <changeSet id="1658146645874-13" author="drdj0208 (generated)">
+        <createTable tableName="users">
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="role_id" type="serial"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-12" author="drdj0208 (generated)">
+        <createTable tableName="user_roles">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_roles"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="permission_id" type="serial"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-14" author="drdj0208 (generated)">
+        <createTable tableName="users_mentoring_tasks">
+            <column name="mentoring_tasks_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mentors_email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-15" author="drdj0208 (generated)">
+        <createTable tableName="users_onboardings">
+            <column name="user_email" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users_onboardings"/>
+            </column>
+            <column name="onboarding_id" type="serial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users_onboardings"/>
+            </column>
+            <column name="percentage" type="FLOAT"/>
+            <column name="completed" type="BOOLEAN"/>
+            <column name="start_date" type="DATETIME"/>
+            <column name="end_date" type="DATETIME"/>
+            <column name="permission_id" type="serial"/>
+            <column name="is_mentor" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1658146645874-16" author="drdj0208 (generated)">
+        <createTable tableName="users_tasks">
+            <column name="user_email" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users_tasks"/>
+            </column>
+            <column name="task_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users_tasks"/>
+            </column>
+            <column name="completed" type="BOOLEAN"/>
+            <column name="permission_id" type="serial"/>
+            <column name="is_mentor" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    
+<!-- Foreign keys -->
+    <changeSet id="1658146645874-17" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="user_task_user_email,user_task_task_id" baseTableName="notifications"
+                                 constraintName="FK_NOTIFICATIONS_ON_USUSEMUSTAID"
+                                 referencedColumnNames="user_email,task_id" referencedTableName="users_tasks"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-18" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="onboarding_id" baseTableName="tasks"
+                                 constraintName="FK_TASKS_ON_ONBOARDING" referencedColumnNames="id"
+                                 referencedTableName="onboardings"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-19" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="parent_task_id" baseTableName="tasks"
+                                 constraintName="FK_TASKS_ON_PARENTTASK" referencedColumnNames="id"
+                                 referencedTableName="tasks"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-20" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="onboarding_id" baseTableName="users_onboardings"
+                                 constraintName="FK_USERS_ONBOARDINGS_ON_ONBOARDING" referencedColumnNames="id"
+                                 referencedTableName="onboardings"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-21" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="users_onboardings"
+                                 constraintName="FK_USERS_ONBOARDINGS_ON_PERMISSION" referencedColumnNames="id"
+                                 referencedTableName="permissions"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-22" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="user_email" baseTableName="users_onboardings"
+                                 constraintName="FK_USERS_ONBOARDINGS_ON_USER_EMAIL" referencedColumnNames="email"
+                                 referencedTableName="users"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-23" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="users" constraintName="FK_USERS_ON_ROLE"
+                                 referencedColumnNames="id" referencedTableName="user_roles"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-24" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="users_tasks"
+                                 constraintName="FK_USERS_TASKS_ON_PERMISSION" referencedColumnNames="id"
+                                 referencedTableName="permissions"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-25" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="users_tasks"
+                                 constraintName="FK_USERS_TASKS_ON_TASK" referencedColumnNames="id"
+                                 referencedTableName="tasks"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-26" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="user_email" baseTableName="users_tasks"
+                                 constraintName="FK_USERS_TASKS_ON_USER_EMAIL" referencedColumnNames="email"
+                                 referencedTableName="users"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-27" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="user_roles"
+                                 constraintName="FK_USER_ROLES_ON_PERMISSION" referencedColumnNames="id"
+                                 referencedTableName="permissions"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-28" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="actions_id" baseTableName="permissions_actions"
+                                 constraintName="fk_peract_on_action_entity" referencedColumnNames="id"
+                                 referencedTableName="actions"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-29" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="permission_entity_id" baseTableName="permissions_actions"
+                                 constraintName="fk_peract_on_permission_entity" referencedColumnNames="id"
+                                 referencedTableName="permissions"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-30" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="links_id" baseTableName="tasks_links"
+                                 constraintName="fk_taslin_on_link_entity" referencedColumnNames="id"
+                                 referencedTableName="links"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-31" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="task_entity_id" baseTableName="tasks_links"
+                                 constraintName="fk_taslin_on_task_entity" referencedColumnNames="id"
+                                 referencedTableName="tasks"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-32" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="mentoring_tasks_id" baseTableName="users_mentoring_tasks"
+                                 constraintName="fk_usementas_on_task_entity" referencedColumnNames="id"
+                                 referencedTableName="tasks"/>
+    </changeSet>
+    
+    <changeSet id="1658146645874-33" author="drdj0208 (generated)">
+        <addForeignKeyConstraint baseColumnNames="mentors_email" baseTableName="users_mentoring_tasks"
+                                 constraintName="fk_usementas_on_user_entity" referencedColumnNames="email"
+                                 referencedTableName="users"/>
+    </changeSet>
+
+</databaseChangeLog>

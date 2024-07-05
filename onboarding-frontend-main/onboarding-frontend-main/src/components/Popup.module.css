@@ -1,0 +1,55 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.popupinner{
+    position: fixed;
+    padding: 32px;
+    width: 80%;
+    height: auto;
+    max-width: 650px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.closebtn{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.savebtn{
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    width: 20%;
+}
+
+.savebtn:hover{
+    background-color:  rgb(21, 128, 61 );
+}
+
+.inputbox{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+.popbox{
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
+

@@ -1,0 +1,43 @@
+.iconbtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: #333333;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+  }
+  
+  .iconbtn:hover {
+    cursor: pointer;
+  }
+  
+  .iconbtn:active {
+    background: #cccccc;
+  }
+  
+  .iconbadge {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+    width: 17px;
+    height: 17px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  .notifitem{
+    
+    border-bottom: 1px white;
+  }
+
+
+  

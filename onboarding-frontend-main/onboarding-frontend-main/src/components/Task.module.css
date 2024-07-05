@@ -1,0 +1,29 @@
+.taskcont{
+    color: white;
+
+    height: auto;
+    border-radius: 25px;
+    padding: 63.5px;
+    background: rgb(14,83,152);
+    background: linear-gradient(317deg, rgba(14,83,152,1) 0%, rgba(18,163,146,1) 100%);
+}
+
+.taskbtn{
+    position: relative;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 25px;
+    min-width: 120px;
+}
+
+.people{
+    background: rgb(14,83,152);
+    background: linear-gradient(120deg, rgba(14,83,152,1) 0%, rgba(18,163,146,1) 100%);
+    border-radius: 25px;
+    height: auto;
+}
+
+.bottomdiv{
+
+    align-self: center;
+}

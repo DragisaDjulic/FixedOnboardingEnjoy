@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+
+input[type=checkbox]{
+  height: 14px;
+  width: 14px;
+}
+
+input[type=checkbox]:checked:disabled {
+  background: #15803d;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 14px;
+  width: 14px;
+  background-image: url(/public/Images/check.png);
+  background-position: center;
+  background-size: contain;
+  border-radius: 2px;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.modalFile, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  border: 2px solid black;
+  width: 250px;
+  height: 200px;
+}
+
+.modalFile-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  border: 2px solid black;
+  width: auto;
+  height: 150px;
+  padding: 20px;
+}
+
+
+#bellbtn{
+  margin-right: 40px;
+}
+input.checkbox {
+  display: inline-block;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

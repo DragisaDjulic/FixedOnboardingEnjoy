@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+		
+      			<changeSet author="osnovni" id="1">
+      			
+      			
+<!-- Actions -->
+      				<insert tableName="actions">
+      					<column name="id" value="1"/>
+      					<column name="type" value="add_user"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="2"/>
+      					<column name="type" value="edit_user"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="3"/>
+      					<column name="type" value="delete_user"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="4"/>
+      					<column name="type" value="view_user"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="5"/>
+      					<column name="type" value="create_onboarding"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="6"/>
+      					<column name="type" value="edit_onboarding"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="7"/>
+      					<column name="type" value="create_task"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="8"/>
+      					<column name="type" value="edit_task"/>
+      				</insert>
+      				
+      				<insert tableName="actions">
+      					<column name="id" value="9"/>
+      					<column name="type" value="delete_task"/>
+      				</insert>
+      				
+      				
+<!-- Permissions -->
+      				<insert tableName="permissions">
+      					<column name="id" value="1"/>
+      					<column name="name" value="admin"/>
+      				</insert>
+      				
+      				<insert tableName="permissions">
+      					<column name="id" value="2"/>
+      					<column name="name" value="mod"/>
+      				</insert>
+      				<insert tableName="permissions">
+      					<column name="id" value="3"/>
+      					<column name="name" value="submod"/>
+      				</insert>
+      				<insert tableName="permissions">
+      					<column name="id" value="4"/>
+      					<column name="name" value="employee"/>
+      				</insert>
+      				<insert tableName="permissions">
+      					<column name="id" value="5"/>
+      					<column name="name" value="employee_ob"/>
+      				</insert>
+      				
+ 					<insert tableName="permissions">
+              			<column  name="id"  value="9"/> 
+              			<column  name="name"  value="EditTaskPerm"/>   
+      				</insert> 
+     				<insert tableName="permissions">  
+             			 <column  name="name"  value="DeleteTaskPerm"/> 
+              			<column  name="id"  value="10"/> 
+      				</insert>
+      				<insert tableName="permissions">  
+              			<column  name="name"  value="CreateTaskPerm"/> 
+              			<column  name="id"  value="11"/>
+      				</insert>
+      				<insert tableName="permissions">  
+              			<column  name="name"  value="EditAndDeleteTaskPerm"/>  
+              			<column  name="id"  value="12"/>
+      				</insert>
+      				<insert tableName="permissions">  
+              			<column  name="name"  value="EditAndCreateTaskPerm"/>   
+              			<column  name="id"  value="13"/>
+      				</insert>
+      				<insert tableName="permissions">  
+              			<column  name="name"  value="DeleteAndCreateTaskPerm"/>  
+              			<column  name="id"  value="14"/> 
+      				</insert>
+      				<insert tableName="permissions">  
+              			<column  name="name"  value="AllTaskPerm"/> 
+              			<column  name="id"  value="15"/>  
+      				</insert>
+ 
+      				
+<!-- permission_actions-->
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="1"/>
+      					<column name="actions_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="1"/>
+      					<column name="actions_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="1"/>
+      					<column name="actions_id" value="3"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="1"/>
+      					<column name="actions_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="1"/>
+      					<column name="actions_id" value="5"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="2"/>
+      					<column name="actions_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+      					<column name="permission_entity_id" value="2"/>
+      					<column name="actions_id" value="5"/>
+      				</insert>
+      				
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="9"/>
+              			<column  name="actions_id"  value="8"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="10"/>
+              			<column  name="actions_id"  value="9"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="11"/>
+              			<column  name="actions_id"  value="7"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="12"/>
+              			<column  name="actions_id"  value="8"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="12"/>
+              			<column  name="actions_id"  value="9"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="13"/>
+              			<column  name="actions_id"  value="8"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="13"/>
+              			<column  name="actions_id"  value="7"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="14"/>
+              			<column  name="actions_id"  value="7"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="14"/>
+              			<column  name="actions_id"  value="9"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="15"/>
+              			<column  name="actions_id"  value="7"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="15"/>
+              			<column  name="actions_id"  value="8"/>
+      				</insert>
+      				<insert tableName="permissions_actions">
+              			<column  name="permission_entity_id"  value="15"/>
+              			<column  name="actions_id"  value="9"/>
+      				</insert>
+  
+      				
+<!-- user_roles -->
+      				<insert tableName="user_roles">
+      					<column name="id" value="1"/>
+      					<column name="name" value="Admin"/>
+      					<column name="permission_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="user_roles">
+      					<column name="id" value="2"/>
+      					<column name="name" value="Team Lead"/>
+      					<column name="permission_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="user_roles">
+      					<column name="id" value="3"/>
+      					<column name="name" value="Senior"/>
+      					<column name="permission_id" value="3"/>
+      				</insert>
+      				
+      				<insert tableName="user_roles">
+      					<column name="id" value="4"/>
+      					<column name="name" value="Junior"/>
+      					<column name="permission_id" value="4"/>
+      				</insert>
+      				
+      				
+<!-- Links -->
+      				<insert tableName="links">
+      					<column name="id" value="1"/>
+      					<column name="link" value="link 1"/>
+      				</insert>
+      				
+      				<insert tableName="links">
+      					<column name="id" value="2"/>
+      					<column name="link" value="link 2"/>
+      				</insert>
+      				
+      				<insert tableName="links">
+      					<column name="id" value="3"/>
+      					<column name="link" value="link 3"/>
+      				</insert>
+      				
+      				<insert tableName="links">
+      					<column name="id" value="4"/>
+      					<column name="link" value="link 4"/>
+      				</insert>
+      				
+      				<insert tableName="links">
+      					<column name="id" value="5"/>
+      					<column name="link" value="link 5"/>
+      				</insert>
+      				
+      				<insert tableName="links">
+      					<column name="id" value="6"/>
+      					<column name="link" value="link 6"/>
+      				</insert>
+      				
+      				
+<!-- Users -->
+      				<insert tableName="users">
+      					<column name="first_name" value="Dragisa"/>
+      					<column name="last_name" value="Djulic"/>
+      					<column name="email" value="dragisa.djulic@gmail.com"/>
+      					<column name="password" value="12345"/>
+      					<column name="phone" value="061-111-1111"/>
+      					<column name="role_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="users">
+      					<column name="first_name" value="Sejo"/>
+      					<column name="last_name" value="Kalac"/>
+      					<column name="email" value="sejo.kalac@gmail.com"/>
+      					<column name="password" value="12345"/>
+      					<column name="phone" value="061-111-1111"/>
+      					<column name="role_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="users">
+      					<column name="first_name" value="Dragisa"/>
+      					<column name="last_name" value="Elfak"/>
+      					<column name="email" value="dragisa@elfak.rs"/>
+      					<column name="password" value="6547645"/>
+      					<column name="phone" value="062-221-1121"/>
+      					<column name="role_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="users">
+      					<column name="first_name" value="Petar"/>
+      					<column name="last_name" value="Petrovic"/>
+      					<column name="email" value="admin@gmail.com"/>
+      					<column name="password" value="12345"/>
+      					<column name="phone" value="063-171-5140"/>
+      					<column name="role_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="users">
+      					<column name="first_name" value="Pedja"/>
+      					<column name="last_name" value="Mentor"/>
+      					<column name="email" value="pedja.mentor@gmail.com"/>
+      					<column name="password" value="133333e5"/>
+      					<column name="phone" value="061-121-1111"/>
+      					<column name="role_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="users">
+      					<column name="first_name" value="Nikola"/>
+      					<column name="last_name" value="Sub Mentor"/>
+      					<column name="email" value="nikola.submentor@gmail.com"/>
+      					<column name="password" value="13ss43e5"/>
+      					<column name="phone" value="060-100-0199"/>
+      					<column name="role_id" value="3"/>
+      				</insert>
+      				
+      				
+<!-- Onboardings -->
+      				<insert tableName="onboardings">
+      					<column name="id" value="1"/>
+      					<column name="name" value="Welcome to the team."/>
+      					<column name="type" value="HR intro"/>
+      					<column name="created_by" value="4"/>
+      					<column name="description" value="Hello new employee, this is initial onboarding you need to finish to see how we are."/>
+      				</insert>    				
+      				
+<!-- Tasks -->
+      				<insert tableName="tasks">
+      					<column name="id" value="1"/>
+      					<column name="name" value="Hello"/>
+      					<column name="description" value="This is just a test task to see that everything is working fine, fill free to continue."/>
+      					<column name="created_by" value="4"/>
+      					<column name="parent_task_id" value="null"/>
+      					<column name="onboarding_id" value="1"/>
+      					<column name="serial_no" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="tasks">
+      					<column name="id" value="2"/>
+      					<column name="name" value="Talk to OfficeManager about gear"/>
+      					<column name="description" value="Contact our OfficeManager for borrowing laptops and other devices."/>
+      					<column name="created_by" value="4"/>
+      					<column name="parent_task_id" value="1"/>
+      					<column name="onboarding_id" value="1"/>
+      					<column name="serial_no" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="tasks">
+      					<column name="id" value="3"/>
+      					<column name="name" value="Start your setup"/>
+      					<column name="description" value="Install software for communication."/>
+      					<column name="created_by" value="4"/>
+      					<column name="parent_task_id" value="1"/>
+      					<column name="onboarding_id" value="1"/>
+      					<column name="serial_no" value="3"/>
+      				</insert>
+      				
+      				<insert tableName="tasks">
+      					<column name="id" value="4"/>
+      					<column name="name" value="Install all necessary tools"/>
+      					<column name="description" value="Install all necessary tools and finish your setup."/>
+      					<column name="created_by" value="4"/>
+      					<column name="parent_task_id" value="1"/>
+      					<column name="onboarding_id" value="1"/>
+      					<column name="serial_no" value="4"/>
+      				</insert>
+      				
+      				
+<!-- tasks_links -->
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="1"/>
+      					<column name="links_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="1"/>
+      					<column name="links_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="1"/>
+      					<column name="links_id" value="3"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="2"/>
+      					<column name="links_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="2"/>
+      					<column name="links_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="2"/>
+      					<column name="links_id" value="5"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="3"/>
+      					<column name="links_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="3"/>
+      					<column name="links_id" value="4"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="3"/>
+      					<column name="links_id" value="5"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="3"/>
+      					<column name="links_id" value="6"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="4"/>
+      					<column name="links_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="tasks_links">
+      					<column name="task_entity_id" value="4"/>
+      					<column name="links_id" value="6"/>
+      				</insert>
+      				
+      				
+<!-- users_mentoring_tasks -->
+      				<insert tableName="users_mentoring_tasks">
+      					<column name="mentors_email" value="admin@gmail.com"/>
+      					<column name="mentoring_tasks_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="users_mentoring_tasks">
+      					<column name="mentors_email" value="admin@gmail.com"/>
+      					<column name="mentoring_tasks_id" value="2"/>
+      				</insert>
+      				
+      				<insert tableName="users_mentoring_tasks">
+      					<column name="mentors_email" value="admin@gmail.com"/>
+      					<column name="mentoring_tasks_id" value="3"/>
+      				</insert>
+      				
+      				<insert tableName="users_mentoring_tasks">
+      					<column name="mentors_email" value="admin@gmail.com"/>
+      					<column name="mentoring_tasks_id" value="4"/>
+      				</insert>
+      				
+      				
+<!-- Users_OnBoardings -->
+      				<insert tableName="users_onboardings">
+      					<column name="onboarding_id" value="1"/>
+      					<column name="user_email" value="admin@gmail.com"/>
+      					<column name="percentage" value="1"/>
+      					<column name="completed" value="true"/>
+      					<column name="permission_id" value="1"/>
+      					<column name="is_mentor" value="true"/>
+      				</insert>
+      				
+      				
+<!-- Users_Tasks -->			
+      				<insert tableName="users_tasks">
+      					<column name="task_id" value="1"/>
+      					<column name="user_email" value="admin@gmail.com"/>
+      					<column name="is_mentor" value="true"/>
+      					<column name="completed" value="true"/>
+      					<column name="permission_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="users_tasks">
+      					<column name="task_id" value="2"/>
+      					<column name="user_email" value="admin@gmail.com"/>
+      					<column name="is_mentor" value="true"/>
+      					<column name="completed" value="true"/>
+      					<column name="permission_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="users_tasks">
+      					<column name="task_id" value="3"/>
+      					<column name="user_email" value="admin@gmail.com"/>
+      					<column name="is_mentor" value="true"/>
+      					<column name="completed" value="true"/>
+      					<column name="permission_id" value="1"/>
+      				</insert>
+      				
+      				<insert tableName="users_tasks">
+      					<column name="task_id" value="4"/>
+      					<column name="user_email" value="admin@gmail.com"/>
+      					<column name="is_mentor" value="true"/>
+      					<column name="completed" value="true"/>
+      					<column name="permission_id" value="1"/>
+      				</insert>
+				
+      				
+<!-- Notifications -->
+      				<insert tableName="notifications">
+      					<column name="id" value="1"/>
+      					<column name="date" value="02/08/1998"/>
+      					<column name="text" value="Today you are becoming admin, start onboarding people."/>
+      					<column name="title" value="Welcome admin"/>
+      					<column name="user_task_task_id" value="1"/>
+      					<column name="user_task_user_email" value="admin@gmail.com"/>
+      					<column name="opened" value="false"/>
+      					<column name="is_mentor" value="false"/>
+      					<column name="user_recever" value="admin@gmail.com"/>
+      				</insert>
+   		  				
+      			</changeSet>
+      			
+</databaseChangeLog>

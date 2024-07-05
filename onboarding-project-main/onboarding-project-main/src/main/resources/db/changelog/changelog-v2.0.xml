@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+	<changeSet author="osnovni" id="1">
+	
+		<update tableName="permissions">
+		    <column name="name" value="ROLE_ADMIN" />
+		    <where>name = 'admin'</where>
+		</update>
+		
+		<update tableName="permissions">
+		    <column name="name" value="ROLE_MOD" />
+		    <where>name = 'mod'</where>
+		</update>
+		
+		<update tableName="permissions">
+		    <column name="name" value="ROLE_SUBMOD" />
+		    <where>name = 'submod'</where>
+		</update>
+		
+		<update tableName="permissions">
+		    <column name="name" value="ROLE_EMPLOYEE" />
+		    <where>name = 'employee'</where>
+		</update>
+		
+		<update tableName="permissions">
+		    <column name="name" value="ROLE_EMPLOYEE_OB" />
+		    <where>name = 'employee_ob'</where>
+		</update>
+		
+		<!-- 12345 - $2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S" />
+		    <where>email = 'admin@gmail.com'</where>
+		</update>
+			
+		<!-- 12345 - $2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S" />
+		    <where>email = 'sejo.kalac@gmail.com'</where>
+		</update>
+		
+		<!-- 12345 - $2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$BInTN0A31OIhz/3WFjvK3OnHlNcf6m.G6Qo.3v9qlVU0WCIusab7S" />
+		    <where>email = 'dragisa.djulic@gmail.com'</where>
+		</update>
+		
+		<!-- 133333e5 - $2a$12$OjyeC49FC4N58As8oTxE.eJ7..kM/vSYu6qlZvva3OaAvqRqBSzeS -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$OjyeC49FC4N58As8oTxE.eJ7..kM/vSYu6qlZvva3OaAvqRqBSzeS" />
+		    <where>email = 'pedja.mebtor@gmail.com'</where>
+		</update>
+		
+		<!-- 13ss43e5 - $2a$12$emawfLIEcP2sbRUClU4bSu/JJ0UjCfB7MupB.P.xk2ORjcIt9eq02 -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$emawfLIEcP2sbRUClU4bSu/JJ0UjCfB7MupB.P.xk2ORjcIt9eq02" />
+		    <where>email = 'nikola.submentor@gmail.com'</where>
+		</update>
+		
+		<!-- 6547645 - $2a$12$VVxHwqFwaAGM7NbUNQAxae60JnpFd4N4WJZP02/xVjUBZqqb/WsGW -->
+		<update tableName="users">
+		    <column name="password" value="$2a$12$VVxHwqFwaAGM7NbUNQAxae60JnpFd4N4WJZP02/xVjUBZqqb/WsGW" />
+		    <where>email = 'dragisa@elfak.rs'</where>
+		</update>
+		
+	</changeSet>
+	  			
+</databaseChangeLog>

@@ -1,0 +1,12 @@
+import { Routes, Route, Link } from "react-router-dom";
+import RoutesCont from './RoutesCont';
+
+function App() {
+  return (
+    <div className="App">
+      <RoutesCont />
+    </div>
+  );
+}
+
+export default App;
